@@ -34,6 +34,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
 
       t.timestamps null: false
+
+      t.bigint "user_id"
+      t.index ["user_id"], name: "index_messages_on_user_id"
     end
 
     add_index :users, :email,                unique: true
